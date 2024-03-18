@@ -19,7 +19,7 @@ TRANSPARENT_PNG = "https://major.io/transparent.png"
 logging.basicConfig(level=logging.INFO)
 
 client = IMAPClient('imap.fastmail.com', ssl=True)
-client.login(IMAP_USERNAME', 'IMAP_PASSWORD')
+client.login(IMAP_USERNAME, IMAP_PASSWORD)
 client.select_folder("VLAlerts", readonly=True)
 messages = client.search()
 
