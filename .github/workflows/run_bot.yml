@@ -1,0 +1,51 @@
+name: "Run bot 🤖"
+
+on:
+  schedule:
+    - cron: "*/5 * * * 1,2,3,4,5"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update_model_list:
+    name: "Run vlalerts bot"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requirements.txt
+
+      - name: Get the latest earnings results
+        run: python pickup.py
+        env:
+          PYTHONUNBUFFERED: 1
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          IMAP_USERNAME: ${{ secrets.IMAP_USERNAME }}
+          IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
+
+      - name: Commit and push if it changed
+        run: |-
+          git config user.name "Major Hayden"
+          git config user.email "major@mhtx.net"
+          git add vl_alerts.db
+          timestamp=$(date -u)
+          git commit -m "Updating last messages seen: ${timestamp}" || exit 0
+          git clean -fxd
+          git status
+          git pull --rebase
+          git push

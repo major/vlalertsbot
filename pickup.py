@@ -8,7 +8,7 @@ import pickledb
 from discord_webhook import DiscordEmbed, DiscordWebhook
 from imapclient import IMAPClient
 
-WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", False)
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL", False)
 IMAP_USERNAME = os.environ.get("IMAP_USERNAME", False)
 IMAP_PASSWORD = os.environ.get("IMAP_PASSWORD", False)
 
@@ -46,7 +46,7 @@ for uid, message_data in client.fetch(messages, "RFC822").items():
     relative_size = re.findall(r"RELATIVE SIZE: ([0-9]*)x larger than", raw_message)[0]
     last_trade_date = re.findall(r"This is its largest trade since [\w]+, ([\w\s,]+).", raw_message)[0]
 
-    webhook = DiscordWebhook(url=WEBHOOK_URL)
+    webhook = DiscordWebhook(url=DISCORD_WEBHOOK_URL)
     embed = DiscordEmbed(
         title=f"{symbol}: #{rank} @ ${price}",
         description=(
