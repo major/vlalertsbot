@@ -31,7 +31,7 @@ for uid, message_data in client.fetch(messages, "RFC822").items():
     
     message_id = email_message.get('Message-ID')
     if db.get(message_id) == True:
-        logging.info(f"Skipping message $s because it's already in the database.", message_id)
+        logging.info(f"Skipping message %s because it's already in the database.", message_id)
         continue
 
     logging.info("Processing message %s", message_id)
