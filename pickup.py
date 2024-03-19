@@ -44,7 +44,10 @@ for uid, message_data in client.fetch(messages, "RFC822").items():
     volume = re.findall(r"VOLUME: ([0-9,]*) shares", raw_message)[0]
     size = re.findall(r"SIZE: Larger than ([0-9\.]*)%", raw_message)[0]
     relative_size = re.findall(r"RELATIVE SIZE: ([0-9]*)x larger than", raw_message)[0]
-    last_trade_date = re.findall(r"This is its largest trade since [\w]+, ([\w\s,]+).", raw_message)[0]
+    try:
+        last_trade_date = re.findall(r"This is its largest trade since [\w]+, ([\w\s,]+).", raw_message)[0]
+    except IndexError:
+        last_trade_date = "ever"
 
     webhook = DiscordWebhook(url=DISCORD_WEBHOOK_URL)
     embed = DiscordEmbed(
