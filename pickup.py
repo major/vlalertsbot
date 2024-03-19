@@ -38,7 +38,7 @@ for uid, message_data in client.fetch(messages, "RFC822").items():
 
     # Dig all the useful data out of the email.
     symbol, trade_date, trade_time = re.findall(r"([A-Z]*) printed an important [closing ]*?trade on ([0-9\-]*) @ ([0-9:]*)", raw_message)[0]
-    price = re.findall(r"PRICE: \$([0-9\.]*)", raw_message)[0]
+    price = re.findall(r"PRICE: \$([0-9\.,]*)", raw_message)[0]
     dollars = re.findall(r"DOLLARS: \$([0-9,]*)", raw_message)[0]
     rank = re.findall(r"RANK: ([0-9]*)", raw_message)[0]
     volume = re.findall(r"VOLUME: ([0-9,]*) shares", raw_message)[0]
