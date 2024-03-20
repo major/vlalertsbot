@@ -37,7 +37,11 @@ for uid, message_data in client.fetch(messages, "RFC822").items():
     logging.info("Processing message %s", message_id)
 
     # Dig all the useful data out of the email.
-    symbol, trade_date, trade_time = re.findall(r"([A-Z]*) printed an important [closing ]*?trade on ([0-9\-]*) @ ([0-9:]*)", raw_message)[0]
+    try:
+        symbol, trade_date, trade_time = re.findall(r"([A-Z]*) printed an important [closing ]*?trade on ([0-9\-]*) @ ([0-9:]*)", raw_message)[0]
+    except IndexError:
+        logging.error("Failed to parse message %s", message_id)
+        continue
     price = re.findall(r"PRICE: \$([0-9\.,]*)", raw_message)[0]
     dollars = re.findall(r"DOLLARS: \$([0-9,]*)", raw_message)[0]
     rank = re.findall(r"RANK: ([0-9]*)", raw_message)[0]
