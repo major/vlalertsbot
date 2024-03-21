@@ -1,0 +1,11 @@
+VEA printed an important trade on 2024-03-20 @ 15:04:27 EST.
+
+ Trade Stats
+ ----------
+ PRICE: $49.94
+ VOLUME: 498,687 shares.
+ DOLLARS: $24,904,429.
+ RANK: N/A
+ SIZE: Larger than 99.06% of all trades for this ticker (going back to 7/26/2007).
+ RELATIVE SIZE: 12x larger than average size.
+ This is its largest trade since Thursday, March 14, 2024.
