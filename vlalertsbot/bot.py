@@ -12,7 +12,7 @@ from vlalertsbot.notify import send_discord_notification
 log = logging.getLogger(__name__)
 
 
-def get_emails() -> list:
+def get_emails() -> list:  # pragma: no cover
     """Get the emails from the email server."""
     client = IMAPClient("imap.fastmail.com", ssl=True)
     client.login(config.IMAP_USERNAME, config.IMAP_PASSWORD)
@@ -33,7 +33,7 @@ def mark_email_as_read(message_id: str) -> None:
     config.DATABASE.dump()
 
 
-def process_emails() -> None:
+def process_emails() -> None:  # pragma: no cover
     """Process the emails."""
     for _, data in get_emails():
         email_message = email.message_from_bytes(data[b"RFC822"])
@@ -53,5 +53,5 @@ def process_emails() -> None:
             log.info("Old email: %s", subject)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     process_emails()
