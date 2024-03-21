@@ -33,7 +33,7 @@ jobs:
       - name: Install dependencies
         run: poetry install --only main
 
-      - name: Get the latest earnings results
+      - name: Get latest VL Alerts
         run: poetry run python vlalertsbot/bot.py
         env:
           PYTHONUNBUFFERED: 1
