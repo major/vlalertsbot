@@ -1,0 +1,11 @@
+VZIO printed an important trade on 2024-03-20 @ 15:05:23 EST with RSI oversold conditions on the hourly timeframe.
+
+ Trade Stats
+ ----------
+ PRICE: $10.91
+ VOLUME: 909,000 shares.
+ DOLLARS: $9,917,190.
+ RANK: 9
+ SIZE: Larger than 98.65% of all trades for this ticker (going back to 3/26/2021).
+ RELATIVE SIZE: 6x larger than average size.
+ This is its largest trade since Tuesday, March 19, 2024.

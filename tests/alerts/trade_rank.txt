@@ -1,0 +1,11 @@
+CHAT printed an important trade on 2024-03-20 @ 14:29:01 EST.
+
+ Trade Stats
+ ----------
+ PRICE: $35.38
+ VOLUME: 28,280 shares.
+ DOLLARS: $1,000,546.
+ RANK: 14
+ SIZE: Larger than 61.76% of all trades for this ticker (going back to 5/18/2023).
+ RELATIVE SIZE: 1x larger than average size.
+ This is its largest trade since Wednesday, March 6, 2024.

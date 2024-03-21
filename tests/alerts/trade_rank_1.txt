@@ -1,0 +1,11 @@
+UPRO printed an important trade on 2024-03-18 @ 16:03:45 EST.
+
+ Trade Stats
+ ----------
+ PRICE: $66.92
+ VOLUME: 2,000,000 shares.
+ DOLLARS: $133,840,000.
+ RANK: 1
+ SIZE: Larger than 100.00% of all trades for this ticker (going back to 6/25/2009).
+ RELATIVE SIZE: 84x larger than average size.
+ This is its largest trade since it began trading..
