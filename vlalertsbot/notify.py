@@ -17,12 +17,20 @@ def build_description(alert: Alert) -> str:
     return "\n".join(description)
 
 
+def get_title(alert: Alert) -> str:
+    """Get the title."""
+    if alert.rank:
+        return f"{alert.symbol}: #{alert.rank} @ ${alert.price}"
+
+    return f"{alert.symbol}: ${alert.price}"
+
+
 def send_discord_notification(alert: Alert) -> None:
     """Send a Discord notification."""
     webhook = DiscordWebhook(url=DISCORD_WEBHOOK_URL)
 
     embed = DiscordEmbed(
-        title=f"{alert.symbol}: #{alert.rank} @ ${alert.price}",
+        title=get_title(alert),
         description=build_description(alert),
     )
     # embed.set_author(**self.generate_action())

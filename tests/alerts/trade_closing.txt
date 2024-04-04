@@ -1,12 +1,12 @@
-NVDA printed an important closing trade on 2024-03-21 @ 16:00:00 EST. 
+NVDA printed an important closing trade on 2024-03-21 @ 16:00:00 EST.
 
- Trade Stats 
- ---------- 
- PRICE: $914.35 
- VOLUME: 1,639,432 shares. 
- DOLLARS: $1,499,014,649. 
- RANK: 25 
- SIZE: Larger than 99.97% of all trades for this ticker (going back to 1/22/1999). 
- RELATIVE SIZE: 108x larger than average size. 
- This is its largest trade since Monday, March 18, 2024. 
- 
+ Trade Stats
+ ----------
+ PRICE: $914.35
+ VOLUME: 1,639,432 shares.
+ DOLLARS: $1,499,014,649.
+ RANK: 25
+ SIZE: Larger than 99.97% of all trades for this ticker (going back to 1/22/1999).
+ RELATIVE SIZE: 108x larger than average size.
+ This is its largest trade since Monday, March 18, 2024.
+
