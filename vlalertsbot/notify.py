@@ -36,7 +36,6 @@ def send_discord_notification(alert: Alert) -> None:
     # embed.set_author(**self.generate_action())
     embed.set_image(url=TRANSPARENT_PNG)
     embed.set_thumbnail(url=STOCK_LOGO % alert.symbol)
-    embed.set_footer(text=f"Traded: {alert.timestamp} Eastern")
 
     webhook.add_embed(embed)
     webhook.execute()
